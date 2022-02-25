@@ -1,2 +1,2 @@
 print("to jest test gita")
-#k;sadk;
+#2 zmiana
