@@ -18,3 +18,6 @@ def generator_hasla(liczba_znakow):
     haslo=random.sample(haslo,len(haslo))
     haslo="".join(haslo)
     return haslo
+# a=generator_hasla(14)
+# print(a)
+# print(len(a))

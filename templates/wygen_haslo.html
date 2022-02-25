@@ -2,11 +2,26 @@
 <html>
 <head>
 </head>
+<script>
+function CopyToClipboard(id)
+    {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(id));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    window.alert("Skopiowano hasło");
+    }
+
+</script>
 
 <body>
     <br>
     <br>
-    <h1 style="text-align:center">{{genhaslo}}</h1>
+    <h1 id="haslo" style="text-align:center">{{genhaslo}}</h1>
+    <button onclick="CopyToClipboard('haslo')">Kopiuj hasło</button>
+
 </body>
 
 </html>
