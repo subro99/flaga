@@ -4,6 +4,8 @@ from moje_programy.gen_data import data
 from moje_programy.haslo import generator_hasla
 from moje_programy.bohaterowie import bohater
 import random
+
+from moje_programy.postac_wiki import opis_wiki
 app=Flask(__name__)
 
 @app.route('/gen_haslo') 
@@ -40,8 +42,8 @@ def flaga_dla_ukrainy():
 @app.route('/brudnopis')
 def brudnopis():
     hero=bohater("ukasz")
-    heroes=["kubus","tygrysek","królik","krzyś"]
-    hero=random.choice(heroes).title()
+    heroes=["Kopernik","Tusk","Bruce Lee","Barack Obama"]
+    hero=opis_wiki(random.choice(heroes))
     return render_template("brudnopis.html", hero=hero, heroes=heroes)
 
 if __name__=="__main__":
