@@ -6,23 +6,43 @@
 body {
   background-image:
   url("static/ukrainamod.jpg");
-  <!-- background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%; -->
+  background-repeat: no-repeat;
+  background-attachment: static;
+  background-size: 100%;
+}
+
+#uk_headline {
+  background-image: url("static/jojo.jpg");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 200px;
+  font-size: 120px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Steelfish Rg', 'helvetica neue',
+           helvetica, arial, sans-serif;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+}
+#ytvid{
+  position: absolute;
+  top: 38%;
+  left: 20;
+  width: 560;
+  height: 315;
 }
 </style>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 style="color:rgb(4, 121, 255); text-align:center;">FLAGA</h1>
+  <div id="uk_headline">flaga<br>dla<br>ukrainy
+    <!-- <h1 style="color:rgb(4, 121, 255); text-align:center;">FLAGA</h1>
     <p style="text-align:center">dla</p>
-    <h1 style="color:rgb(199, 199, 0); text-align:center;">UKRAINY</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/wNECV2h-y58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1 style="color:rgb(199, 199, 0); text-align:center;">UKRAINY</h1> -->
+    <div id="ytvid">
+    <iframe width="560px" height="315px" src="https://www.youtube.com/embed/wNECV2h-y58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/B-rnM-MwRHY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 </body>
 </html>
