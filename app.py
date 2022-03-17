@@ -8,12 +8,10 @@ from moje_programy.postac_wiki import description_wiki
 
 app=Flask(__name__)
 
-@app.route('/gen_haslo') 
-def haslo(): 
-    return render_template("gen_haslo.html")
-
-@app.route('/wygen_haslo', methods = ["POST"])
+@app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
+    if request.method == "GET":
+        return render_template("gen_haslo.html")
     if request.method == "POST":
         liczba_znakow=int(request.form["liczba_znakow"])
         # gen_data.data(liczba_znakow)
