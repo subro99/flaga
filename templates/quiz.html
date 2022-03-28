@@ -6,10 +6,24 @@
 <body>
     <br>
     <br>
-    <h1>Wprowadz liczbe znakow</h1> 
     <form action="/quiz" method = "POST">
-        <input type="number" name="liczba_znakow" value="8" min="8" max="20">
-        <input type="submit" value="Generuj haslo">
+    <h1>{{d_quiz_1}}</h1>
+    <h1>{{correct_answers}}</h1>
+    {% for capital, answers in d_quiz_1.items(): %}
+        <h1>{{answers}}</h1>
+        <h2>{{capital}}</h2>
+        <input type="radio" id = "A" name="{{ capital }}" value="{{ answers[0] }}">
+        <label for="A">{{answers[0]}}</label><br>
+        <input type="radio" id = "B" name="{{ capital }}" value="{{ answers[1] }}">
+        <label for="B">{{answers[1]}}</label><br>
+        <input type="radio" id = "A" name="{{ capital }}" value="{{ answers[2] }}">
+        <label for="C">{{answers[2]}}</label><br>
+        <input type="radio" id = "B" name="{{ capital }}" value="{{ answers[3] }}">
+        <label for="D">{{answers[3]}}</label><br>
+        
+    {%endfor%}
+        <input type = "hidden" name="answers" value="{{ correct_answers }}">
+        <input type="submit" value="Wyslij wynik">
     </form>
 </body>
 </html>

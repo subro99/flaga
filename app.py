@@ -5,7 +5,8 @@ from moje_programy.haslo import generator_hasla
 from moje_programy.bohaterowie import bohater
 import random
 from moje_programy.postac_wiki import description_wiki
-
+from moje_programy.quiz_questions import capitals
+from moje_programy.quiz import quiz_generator
 app=Flask(__name__)
 
 @app.route('/gen_haslo', methods = ["GET","POST"])
@@ -56,11 +57,41 @@ def int_characters():
     int_characters.sort(reverse=True,key=lambda x:x[2])
     return render_template("ciekawe_postacie.html",int_characters=int_characters)
 
-# @app.route('/quiz')
-# def quiz():
 
-
-
+@app.route('/quiz', methods = ["GET","POST"])
+def quiz():
+    # d_quiz_1, correct_answers = quiz_generator(capitals)
+    if request.method == "GET":
+        d_quiz_1, correct_answers = quiz_generator(capitals)
+        return render_template("quiz.html",d_quiz_1=d_quiz_1, correct_answers=correct_answers)
+    if request.method == "POST":
+        
+        result=0
+        odpowiedzi=[]
+        answers=request.form
+        # answers=answers.items()
+        # odpowiedzi.append(answer)
+        correct_answers=eval(answers.get("answers"))
+        # c_type=type(c_answers)
+        # correct_type=type(correct_answers)
+        qq=[]
+        aa=[]
+        cc=[]
+        for q,a in answers.items():
+            if q=="answers":
+                continue
+            qq.append(q)
+            aa.append(a)
+            cc.append(correct_answers.get(q))
+            if a==correct_answers.get(q):
+                result+=1
+        # for capital,correct_answer in correct_answers.items():
+        #     # answer=request.form[capital]
+        #     # answer=answers.items()
+        #     # odpowiedzi.append(answer)
+        #     if answer==correct_answer:
+        #         result+=1
+        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,correct_answers=correct_answers)
 
 if __name__=="__main__":
     app.run()
