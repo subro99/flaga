@@ -67,36 +67,26 @@ def quiz():
     if request.method == "GET":
         d_quiz_1, correct_answers = quiz_generator(capitals)
         session["answers"] = correct_answers
-        session_storage(d_quiz_1, correct_answers)
-        return render_template("quiz.html",d_quiz_1=d_quiz_1, correct_answers=correct_answers)
+        # session_storage(d_quiz_1, correct_answers)
+        return render_template("quiz.html",d_quiz_1=d_quiz_1)
     if request.method == "POST":
-        # session_storage(d_quiz_1,session["answers"])
         result=0
         odpowiedzi=session["answers"]
         answers=request.form
-        # answers=answers.items()
-        # odpowiedzi.append(answer)
-        correct_answers=eval(answers.get("answers"))
-        # c_type=type(c_answers)
-        # correct_type=type(correct_answers)
         qq=[]
         aa=[]
         cc=[]
-        for q,a in answers.items():
+        for question, user_answer in answers.items():
+            print(question, user_answer)
+            if odpowiedzi.get(question)==user_answer:
+                result+=1
+        session_storage(answers, result)
+        for q,a in odpowiedzi.items():
             if q=="answers":
                 continue
             qq.append(q)
             aa.append(a)
-            cc.append(correct_answers.get(q))
-            if a==correct_answers.get(q):
-                result+=1
-        # for capital,correct_answer in correct_answers.items():
-        #     # answer=request.form[capital]
-        #     # answer=answers.items()
-        #     # odpowiedzi.append(answer)
-        #     if answer==correct_answer:
-        #         result+=1
-        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,correct_answers=correct_answers,odpowiedzi=odpowiedzi)
+        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,odpowiedzi=odpowiedzi)
 
 if __name__=="__main__":
     app.run()
