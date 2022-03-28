@@ -73,14 +73,16 @@ def quiz():
         result=0
         odpowiedzi=session["answers"]
         answers=request.form
+        answers_dict=answers.to_dict()
+        # print(answers_dict)
         qq=[]
         aa=[]
         cc=[]
         for question, user_answer in answers.items():
-            print(question, user_answer)
+            # print(question, user_answer)
             if odpowiedzi.get(question)==user_answer:
                 result+=1
-        session_storage(answers, result)
+        session_storage(answers_dict, result)
         for q,a in odpowiedzi.items():
             if q=="answers":
                 continue
