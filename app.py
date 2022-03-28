@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 import os
 from moje_programy.gen_data import data
 from moje_programy.haslo import generator_hasla
@@ -7,7 +7,10 @@ import random
 from moje_programy.postac_wiki import description_wiki
 from moje_programy.quiz_questions import capitals
 from moje_programy.quiz import quiz_generator
+from moje_programy.session_data import session_storage
+
 app=Flask(__name__)
+app.secret_key = "lodoherbataultrasecretkey"
 
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
@@ -63,11 +66,13 @@ def quiz():
     # d_quiz_1, correct_answers = quiz_generator(capitals)
     if request.method == "GET":
         d_quiz_1, correct_answers = quiz_generator(capitals)
+        session["answers"] = correct_answers
+        session_storage(d_quiz_1, correct_answers)
         return render_template("quiz.html",d_quiz_1=d_quiz_1, correct_answers=correct_answers)
     if request.method == "POST":
-        
+        # session_storage(d_quiz_1,session["answers"])
         result=0
-        odpowiedzi=[]
+        odpowiedzi=session["answers"]
         answers=request.form
         # answers=answers.items()
         # odpowiedzi.append(answer)
@@ -91,7 +96,7 @@ def quiz():
         #     # odpowiedzi.append(answer)
         #     if answer==correct_answer:
         #         result+=1
-        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,correct_answers=correct_answers)
+        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,correct_answers=correct_answers,odpowiedzi=odpowiedzi)
 
 if __name__=="__main__":
     app.run()
