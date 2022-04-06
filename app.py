@@ -1,13 +1,19 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 import os
 from moje_programy.gen_data import data
 from moje_programy.haslo import generator_hasla
 from moje_programy.bohaterowie import bohater
 import random
 from moje_programy.postac_wiki import description_wiki
+from moje_programy.quiz_questions import capitals
+from moje_programy.quiz import quiz_generator
+from moje_programy.session_data import session_storage
 
 app=Flask(__name__)
-
+app.secret_key = "lodoherbataultrasecretkey"
+# app.config.from_object("config.DevelopmentConfig")
+app.config.from_object("config.Config")
+print(app.config)
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
     if request.method == "GET":
@@ -56,11 +62,35 @@ def int_characters():
     int_characters.sort(reverse=True,key=lambda x:x[2])
     return render_template("ciekawe_postacie.html",int_characters=int_characters)
 
-# @app.route('/quiz')
-# def quiz():
 
-
-
+@app.route('/quiz', methods = ["GET","POST"])
+def quiz():
+    # d_quiz_1, correct_answers = quiz_generator(capitals)
+    if request.method == "GET":
+        d_quiz_1, correct_answers = quiz_generator(capitals)
+        session["answers"] = correct_answers
+        # session_storage(d_quiz_1, correct_answers)
+        return render_template("quiz.html",d_quiz_1=d_quiz_1)
+    if request.method == "POST":
+        result=0
+        odpowiedzi=session["answers"]
+        answers=request.form
+        answers_dict=answers.to_dict()
+        # print(answers_dict)
+        # qq=[]
+        # aa=[]
+        # cc=[]
+        for question, user_answer in answers.items():
+            # print(question, user_answer)
+            if odpowiedzi.get(question)==user_answer:
+                result+=1
+        session_storage(answers_dict, result)
+        # for q,a in odpowiedzi.items():
+        #     if q=="answers":
+        #         continue
+        #     qq.append(q)
+        #     aa.append(a)
+        return render_template("quiz_wynik.html",result=result,answers=answers)
 
 if __name__=="__main__":
     app.run()
