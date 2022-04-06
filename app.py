@@ -11,7 +11,9 @@ from moje_programy.session_data import session_storage
 
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
-
+# app.config.from_object("config.DevelopmentConfig")
+app.config.from_object("config.Config")
+print(app.config)
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
     if request.method == "GET":
@@ -75,20 +77,20 @@ def quiz():
         answers=request.form
         answers_dict=answers.to_dict()
         # print(answers_dict)
-        qq=[]
-        aa=[]
-        cc=[]
+        # qq=[]
+        # aa=[]
+        # cc=[]
         for question, user_answer in answers.items():
             # print(question, user_answer)
             if odpowiedzi.get(question)==user_answer:
                 result+=1
         session_storage(answers_dict, result)
-        for q,a in odpowiedzi.items():
-            if q=="answers":
-                continue
-            qq.append(q)
-            aa.append(a)
-        return render_template("quiz_wynik.html",result=result,answers=answers,qq=qq,aa=aa,cc=cc,odpowiedzi=odpowiedzi)
+        # for q,a in odpowiedzi.items():
+        #     if q=="answers":
+        #         continue
+        #     qq.append(q)
+        #     aa.append(a)
+        return render_template("quiz_wynik.html",result=result,answers=answers)
 
 if __name__=="__main__":
     app.run()
