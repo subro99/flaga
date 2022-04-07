@@ -14,3 +14,8 @@ odpowiedzi, wynik, start time, finish time
 "{'fname': 'PC', 'South Dakota': 'Topeka', 'Indiana': 'Hartford', 'Texas': 'Columbia', 'Iowa': 'Oklahoma City', 'Utah': 'Madison'}",0,2022-04-07 10:27:04+00:00,2022-04-07 10:27:26.507224
 "{'fname': 'Xiaomi', 'NewMexico': 'Santa Fe', 'South Dakota': 'Pierre', 'Maine': 'Augusta', 'New Jersey': 'Trenton', 'Alaska': 'Juneau'}",5,2022-04-07 10:29:50+00:00,2022-04-07 10:30:26.906525
 "{'fname': 'PC2', 'Nebraska': 'Lincoln', 'Alaska': 'Juneau', 'Pennsylvania': 'Harrisburg', 'South Dakota': 'Pierre', 'Ohio': 'Columbus'}",5,2022-04-07 10:29:40+00:00,2022-04-07 10:30:52.983953
+"{'fname': 'pc3', 'New Jersey': 'Nashville', 'Kentucky': 'Frankfort', 'Maine': 'Augusta', 'South Carolina': 'Columbia', 'North Dakota': 'Montpelier'}",3,2022-04-07 10:34:54.575989,2022-04-07 10:35:02.413410
+"{'fname': '', 'Washington': 'Olympia', 'Hawaii': 'Denver', 'Missouri': 'Richmond', 'Kansas': 'Topeka', 'Delaware': 'Juneau'}",2,2022-04-07 15:46:58.482511,2022-04-07 15:47:12.126600
+"{'fname': 'CSS', 'Montana': 'Helena', 'Idaho': 'Boise', 'Wisconsin': 'Madison', 'Florida': 'Tallahassee', 'Texas': 'Austin'}",5,2022-04-07 16:10:32.027828,2022-04-07 16:11:34.555584
+{'fname': ''},0,2022-04-07 16:28:10.830713,2022-04-07 16:28:12.875275
+"{'fname': '', 'Montana': 'Juneau', 'Illinois': 'Hartford', 'South Dakota': 'Harrisburg', 'Wyoming': 'Atlanta', 'Alabama': 'Hartford'}",0,2022-04-07 16:35:56.503865,2022-04-07 16:36:03.060755
