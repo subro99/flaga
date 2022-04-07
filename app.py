@@ -12,7 +12,7 @@ import datetime
 import pytz
 
 app=Flask(__name__)
-app.secret_key = "lodoherbataultrasecretkey"
+app.secret_key = "lodoherbgit checkout mainataultrasecretkey"
 app.config.from_object("config.DevelopmentConfig")
 # app.config.from_object("config.Config")
 print(app.config)
