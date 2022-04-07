@@ -8,6 +8,8 @@ from moje_programy.postac_wiki import description_wiki
 from moje_programy.quiz_questions import capitals
 from moje_programy.quiz import quiz_generator
 from moje_programy.session_data import session_storage
+import datetime
+import pytz
 
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
@@ -67,12 +69,17 @@ def int_characters():
 def quiz():
     # d_quiz_1, correct_answers = quiz_generator(capitals)
     if request.method == "GET":
+        my_date = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         d_quiz_1, correct_answers = quiz_generator(capitals)
         session["answers"] = correct_answers
+        session["stime"]=my_date
         # session_storage(d_quiz_1, correct_answers)
         return render_template("quiz.html",d_quiz_1=d_quiz_1)
     if request.method == "POST":
+        my_date = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+        session["ftime"]=my_date
         result=0
+
         odpowiedzi=session["answers"]
         answers=request.form
         answers_dict=answers.to_dict()
@@ -84,7 +91,7 @@ def quiz():
             # print(question, user_answer)
             if odpowiedzi.get(question)==user_answer:
                 result+=1
-        session_storage(answers_dict, result)
+        session_storage(answers_dict, result,session["stime"],session["ftime"])
         # for q,a in odpowiedzi.items():
         #     if q=="answers":
         #         continue
