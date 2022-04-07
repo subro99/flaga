@@ -13,8 +13,8 @@ import pytz
 
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
-# app.config.from_object("config.DevelopmentConfig")
-app.config.from_object("config.Config")
+app.config.from_object("config.DevelopmentConfig")
+# app.config.from_object("config.Config")
 print(app.config)
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
@@ -69,15 +69,15 @@ def int_characters():
 def quiz():
     # d_quiz_1, correct_answers = quiz_generator(capitals)
     if request.method == "GET":
-        my_date = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+        my_date1 = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         d_quiz_1, correct_answers = quiz_generator(capitals)
         session["answers"] = correct_answers
-        session["stime"]=my_date
+        session["stime"]=str(my_date1) #dlaczego bez str() jest +00:00 na koncu?
         # session_storage(d_quiz_1, correct_answers)
         return render_template("quiz.html",d_quiz_1=d_quiz_1)
     if request.method == "POST":
-        my_date = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
-        session["ftime"]=my_date
+        my_date2 = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+        session["ftime"]=str(my_date2)
         result=0
 
         odpowiedzi=session["answers"]

@@ -2,3 +2,15 @@ odpowiedzi, wynik, start time, finish time
 "{'fname': 'joh', 'North Carolina': 'Raleigh', 'Montana': 'Baton Rouge', 'Florida': 'Trenton', 'Wyoming': 'Austin', 'Arkansas': 'Madison'}",1,2022-04-07 06:15:17+00:00,2022-04-07 08:15:36.505870+02:00
 "{'fname': 'josh', 'West Virginia': 'Bismarck', 'South Carolina': 'Lansing', 'Missouri': 'Indianapolis', 'Oregon': 'Des Moines', 'Iowa': 'Montgomery'}",0,2022-04-07 06:19:33+00:00,2022-04-07 08:19:43.287112+02:00
 "{'fname': 'odasd', 'California': 'Sacramento'}",1,2022-04-07 08:21:24+00:00,2022-04-07 08:21:30.480837
+"{'fname': 'Jonn', 'Utah': 'Salt Lake City', 'Virginia': 'Harrisburg', 'Texas': 'Austin', 'Pennsylvania': 'Lincoln', 'Alaska': 'Hartford'}",2,2022-04-07 08:41:34+00:00,2022-04-07 08:41:53.553662
+"{'fname': 'Frank', 'New Hampshire': 'Baton Rouge', 'Alaska': 'Baton Rouge', 'Massachusetts': 'Jackson', 'Washington': 'Olympia', 'Connecticut': 'Phoenix'}",1,2022-04-07 08:46:02+00:00,2022-04-07 08:49:01.253959
+"{'fname': 'josh', 'South Carolina': 'Columbia', 'Connecticut': 'Santa Fe', 'Maine': 'Tallahassee', 'Rhode Island': 'Montgomery', 'Utah': 'Denver'}",0,2022-04-07 08:46:02+00:00,2022-04-07 09:23:17.778062
+"{'fname': 'ihhkjh', 'Washington': 'Annapolis'}",0,2022-04-07 08:46:02+00:00,2022-04-07 09:25:42.597346
+"{'fname': ';/lkm,', 'Minnesota': 'Tallahassee'}",0,2022-04-07 08:46:02+00:00,2022-04-07 09:30:32.107518
+"{'fname': 'subro', 'Missouri': 'Cheyenne', 'Iowa': 'Baton Rouge', 'Maryland': 'Lincoln', 'Illinois': 'Oklahoma City', 'Indiana': 'Providence'}",0,2022-04-07 09:31:42+00:00,2022-04-07 09:31:53.657871
+{'fname': 'lkj'},0,2022-04-07 09:32:58+00:00,2022-04-07 09:33:36.838996
+{'fname': 'jlkj'},0,2022-04-07 09:35:40.028022,2022-04-07 09:35:42.500901
+"{'fname': 'Xiaomi', 'Florida': 'Helena', 'Nevada': 'Columbus', 'Wyoming': 'Helena', 'West Virginia': 'Frankfort', 'New Hampshire': 'Concord'}",1,2022-04-07 10:26:15+00:00,2022-04-07 10:27:23.368947
+"{'fname': 'PC', 'South Dakota': 'Topeka', 'Indiana': 'Hartford', 'Texas': 'Columbia', 'Iowa': 'Oklahoma City', 'Utah': 'Madison'}",0,2022-04-07 10:27:04+00:00,2022-04-07 10:27:26.507224
+"{'fname': 'Xiaomi', 'NewMexico': 'Santa Fe', 'South Dakota': 'Pierre', 'Maine': 'Augusta', 'New Jersey': 'Trenton', 'Alaska': 'Juneau'}",5,2022-04-07 10:29:50+00:00,2022-04-07 10:30:26.906525
+"{'fname': 'PC2', 'Nebraska': 'Lincoln', 'Alaska': 'Juneau', 'Pennsylvania': 'Harrisburg', 'South Dakota': 'Pierre', 'Ohio': 'Columbus'}",5,2022-04-07 10:29:40+00:00,2022-04-07 10:30:52.983953
