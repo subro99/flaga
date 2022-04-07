@@ -1,20 +1,4 @@
 odpowiedzi, wynik, start time, finish time
-"{'Delaware': 'Dover', 'New York': 'Albany', 'Idaho': 'Lansing', 'Kentucky': 'Santa Fe', 'South Dakota': 'Providence'}",2
-"{'Wyoming': 'Columbia', 'North Dakota': 'Bismarck', 'Florida': 'Des Moines', 'Connecticut': 'Denver', 'West Virginia': 'Albany'}",1
-"{'Indiana': 'Oklahoma City', 'Florida': 'Tallahassee', 'Delaware': 'Saint Paul', 'Maryland': 'Salem', 'Colorado': 'Jefferson City'}",1
-"{'Missouri': 'Jefferson City', 'California': 'Springfield', 'Nevada': 'Denver', 'Washington': 'Olympia', 'Georgia': 'Charleston'}",2
-"{'Wyoming': 'Indianapolis', 'Washington': 'Montpelier', 'Pennsylvania': 'Frankfort', 'Florida': 'Harrisburg', 'Nebraska': 'Springfield'}",0
-"{'Delaware': 'Boise', 'Rhode Island': 'Providence', 'Nevada': 'Springfield', 'Florida': 'Tallahassee', 'Maine': 'Dover'}",2
-"{'fname': 'subro', 'Utah': 'Springfield', 'Kansas': 'Little Rock', 'Mississippi': 'Pierre', 'California': 'Providence', 'Virginia': 'Tallahassee'}",0
-"{'fname': 'John', 'Michigan': 'Lansing', 'Vermont': 'Montpelier', 'Wyoming': 'Cheyenne', 'Arizona': 'Phoenix', 'Connecticut': 'Hartford'}",5
-"{'fname': 'Nick', 'Louisiana': 'Baton Rouge', 'Maryland': 'Annapolis', 'Rhode Island': 'Providence', 'Oregon': 'Salem', 'Virginia': 'Richmond'}",5
-"{'fname': 'FIona', 'Nevada': 'Carson City', 'Washington': 'Olympia', 'Hawaii': 'Honolulu', 'Illinois': 'Springfield', 'California': 'Sacramento'}",0
-"{'fname': 'tim', 'Washington': 'Hartford', 'Oklahoma': 'Raleigh', 'Florida': 'Boise', 'Wisconsin': 'Madison', 'Delaware': 'Carson City'}",1
-"{'fname': 'tim', 'Arizona': 'Indianapolis', 'Maryland': 'Montgomery', 'Vermont': 'Bismarck', 'Alabama': 'Montgomery', 'South Dakota': 'Atlanta'}",1
-"{'fname': 'tim', 'Massachusetts': 'Sacramento', 'Nevada': 'Salem', 'Montana': 'Salt Lake City', 'California': 'Columbia', 'North Carolina': 'Charleston'}",0
-"{'fname': 'tisasd', 'New Hampshire': 'Concord', 'Ohio': 'Columbus', 'Arizona': 'Little Rock', 'California': 'Concord', 'Michigan': 'Lansing'}",3
-"{'fname': 'timm', 'Mississippi': 'Denver', 'West Virginia': 'Juneau', 'Alaska': 'Charleston', 'Iowa': 'Boston', 'Louisiana': 'Frankfort'}",0
-"{'fname': 'timm', 'Mississippi': 'Denver', 'West Virginia': 'Juneau', 'Alaska': 'Charleston', 'Iowa': 'Boston', 'Louisiana': 'Frankfort'}",0
 "{'fname': 'joh', 'North Carolina': 'Raleigh', 'Montana': 'Baton Rouge', 'Florida': 'Trenton', 'Wyoming': 'Austin', 'Arkansas': 'Madison'}",1,2022-04-07 06:15:17+00:00,2022-04-07 08:15:36.505870+02:00
 "{'fname': 'josh', 'West Virginia': 'Bismarck', 'South Carolina': 'Lansing', 'Missouri': 'Indianapolis', 'Oregon': 'Des Moines', 'Iowa': 'Montgomery'}",0,2022-04-07 06:19:33+00:00,2022-04-07 08:19:43.287112+02:00
 "{'fname': 'odasd', 'California': 'Sacramento'}",1,2022-04-07 08:21:24+00:00,2022-04-07 08:21:30.480837
