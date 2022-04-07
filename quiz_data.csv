@@ -19,3 +19,16 @@ odpowiedzi, wynik, start time, finish time
 "{'fname': 'CSS', 'Montana': 'Helena', 'Idaho': 'Boise', 'Wisconsin': 'Madison', 'Florida': 'Tallahassee', 'Texas': 'Austin'}",5,2022-04-07 16:10:32.027828,2022-04-07 16:11:34.555584
 {'fname': ''},0,2022-04-07 16:28:10.830713,2022-04-07 16:28:12.875275
 "{'fname': '', 'Montana': 'Juneau', 'Illinois': 'Hartford', 'South Dakota': 'Harrisburg', 'Wyoming': 'Atlanta', 'Alabama': 'Hartford'}",0,2022-04-07 16:35:56.503865,2022-04-07 16:36:03.060755
+{'fname': ''},0,2022-04-07 18:52:59.144164,2022-04-07 18:53:01.072271
+{'fname': ''},0,2022-04-07 18:57:55.145883,2022-04-07 18:57:57.976921
+"{'fname': '', 'South Dakota': 'Salem'}",0,2022-04-07 18:58:00.234403,2022-04-07 18:58:42.111522
+"{'fname': '', 'Alaska': 'Charleston', 'West Virginia': 'Madison'}",0,2022-04-07 19:22:23.598941,2022-04-07 19:22:27.640961
+"{'fname': '', 'Minnesota': 'Saint Paul'}",1,2022-04-07 19:25:48.734455,2022-04-07 19:25:51.582817
+"{'fname': 'ajsg', 'Oklahoma': 'Oklahoma City', 'Illinois': 'Frankfort', 'Massachusetts': 'Charleston', 'Idaho': 'Boise', 'Kentucky': 'Topeka'}",2,2022-04-07 19:27:05.496010,2022-04-07 19:27:13.990885
+{'fname': ''},0,2022-04-07 19:27:27.477855,2022-04-07 19:27:28.755077
+"{'fname': '', 'Alaska': 'Madison', 'Idaho': 'Topeka', 'North Dakota': 'Nashville', 'Hawaii': 'Frankfort', 'Georgia': 'Atlanta'}",1,2022-04-07 19:31:00.386043,2022-04-07 19:33:25.613556
+{'fname': ''},0,2022-04-07 19:33:32.834987,2022-04-07 19:34:06.351570
+"{'fname': '', 'Arkansas': 'Austin'}",0,2022-04-07 19:34:57.630541,2022-04-07 19:34:59.722159
+"{'fname': '', 'West Virginia': 'Sacramento', 'Texas': 'Oklahoma City', 'NewMexico': 'Pierre', 'Massachusetts': 'Madison', 'Minnesota': 'Saint Paul'}",1,2022-04-07 19:35:15.632500,2022-04-07 19:35:25.218719
+"{'fname': '', 'West Virginia': 'Charleston', 'Utah': 'Montgomery', 'Rhode Island': 'Cheyenne', 'Georgia': 'Frankfort', 'Virginia': 'Montpelier'}",1,2022-04-07 19:35:41.662736,2022-04-07 19:36:15.571661
+"{'fname': '', 'Minnesota': 'Little Rock', 'Wyoming': 'Topeka', 'North Dakota': 'Raleigh', 'North Carolina': 'Montgomery', 'Washington': 'Baton Rouge'}",0,2022-04-07 19:39:23.247682,2022-04-07 19:39:27.781740
