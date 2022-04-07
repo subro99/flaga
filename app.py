@@ -13,8 +13,8 @@ import pytz
 
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
-app.config.from_object("config.DevelopmentConfig")
-# app.config.from_object("config.Config")
+# app.config.from_object("config.DevelopmentConfig")
+app.config.from_object("config.Config")
 print(app.config)
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
