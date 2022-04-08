@@ -6,6 +6,7 @@ from moje_programy.bohaterowie import bohater
 import random
 from moje_programy.postac_wiki import description_wiki
 from moje_programy.quiz_questions import capitals
+from moje_programy.quiz_questions import english
 from moje_programy.quiz import quiz_generator
 from moje_programy.session_data import session_storage
 import datetime
@@ -67,7 +68,6 @@ def int_characters():
 
 @app.route('/quiz', methods = ["GET","POST"])
 def quiz():
-    # d_quiz_1, correct_answers = quiz_generator(capitals)
     if request.method == "GET":
         my_date1 = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         d_quiz_1, correct_answers = quiz_generator(capitals)
