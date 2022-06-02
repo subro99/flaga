@@ -16,8 +16,8 @@ from wtforms import StringField, SelectField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 import wtforms.validators
 app=Flask(__name__)
-app.secret_key = "lodoherbgit checkout mainataultrasecretkey"
-# app.config.from_object("config.DevelopmentConfig")
+app.secret_key = "lodoherbgitcheckout"
+app.config.from_object("config.DevelopmentConfig")
 # app.config.from_object("config.Config")
 # print(app.config)
 @app.route('/gen_haslo', methods = ["GET","POST"])
@@ -136,6 +136,12 @@ def form_result():
     music_type=request.args["music_type"]
     return render_template("form_result.html", music_type=music_type)
 
+
+@app.route('/result')
+def res():
+    return render_template("session_result.html",s=session.items())
+
+    
 class music_form(FlaskForm):
     m_types=[
         ("Rock", "Rock"),
