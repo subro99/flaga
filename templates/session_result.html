@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="center">
+{%for k,v in s%}
+<b>{{k}} : {{v}}</b>
+<br>
+{%endfor%}
+</div>
+
+{%endblock%}
