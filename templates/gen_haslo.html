@@ -1,15 +1,22 @@
-<!DOCTYPE>
-<html>
-<head>
-</head>
 
-<body>
+{% extends "base.html" %}
+{% block content %}
+<div class="wrapper">
+<div class="center">
     <br>
     <br>
     <h1>Wprowadz liczbe znakow</h1> 
     <form action="/gen_haslo" method = "POST">
+    <div class="center2">
         <input type="number" name="liczba_znakow" value="8" min="8" max="20">
         <input type="submit" value="Generuj haslo">
+    </div>
     </form>
-</body>
-</html>
+    <br>
+    <br>
+
+</div>
+</div>
+
+
+{%endblock%}

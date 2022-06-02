@@ -36,3 +36,6 @@ odpowiedzi, wynik, start time, finish time
 "{'fname': 'suhy', 'horizontal': 'poziomy', 'either': 'zarówno, albo', 'constraint': 'ograniczenie, przymus', 'dump': 'wyrzucać, pozbywać się', 'arbitrary': 'przypadkowy, dowolny'}",5,2022-04-07 20:18:34.890285,2022-04-07 20:19:11.264747
 "{'fname': 'sped', 'Wyoming': 'Bismarck', 'Rhode Island': 'Providence', 'Vermont': 'Dover', 'Michigan': 'Boise', 'Maine': 'Augusta'}",2,2022-04-07 20:21:25.657808,2022-04-07 20:27:55.301856
 "{'fname': 'dirty diana', 'New York': 'Indianapolis', 'Washington': 'Jackson', 'Illinois': 'Springfield', 'Vermont': 'Montpelier', 'West Virginia': 'Albany'}",2,2022-04-08 19:27:40.636663,2022-04-08 19:27:52.158478
+"{'fname': 'subro', 'Nebraska': 'Des Moines', 'North Carolina': 'Pierre', 'Mississippi': 'Atlanta', 'Florida': 'Sacramento', 'Indiana': 'Hartford'}",0,2022-05-27 09:08:01.852182,2022-05-27 09:08:08.546443
+"{'fname': 'ben', 'North Dakota': 'Sacramento', 'New York': 'Oklahoma City', 'Maine': 'Atlanta', 'Arkansas': 'Carson City', 'Massachusetts': 'Lansing'}",0,2022-05-27 09:10:12.318657,2022-05-27 09:10:21.170162
+"{'fname': 'John Doe', 'Maine': 'Augusta', 'West Virginia': 'Little Rock', 'Utah': 'Dover', 'North Carolina': 'Raleigh', 'Ohio': 'Tallahassee'}",2,2022-05-27 09:32:11.045729,2022-05-27 09:32:22.039561

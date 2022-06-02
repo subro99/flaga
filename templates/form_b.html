@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="wrapper">
+
+
+    <div class="center">
+        <form action="" method="POST">
+            {{ form.csrf_token() }}
+            <p><b>{{form.mess_box.label}}</b></p>
+            <p>{{form.mess_box}}</p>
+            <ul class="ul_0padding">
+                {%for error in form.mess_box.errors%}
+                <li style="color:red;">{{error}}</li>
+                {%endfor%}
+            
+            </ul>
+            <p><b>{{form.music_type.label}}</b></p>
+            <p>{{form.music_type}}</p>
+            <p>{{form.button}}</p>
+
+            
+    </div>
+</div>
+{%endblock%}
+
+</form>
+ 

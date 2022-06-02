@@ -1,27 +1,27 @@
-<!DOCTYPE>
-<html>
-<head>
-</head>
+
 <script>
-function CopyToClipboard(id)
-    {
-    var r = document.createRange();
-    r.selectNode(document.getElementById(id));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(r);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    window.alert("Skopiowano hasło");
-    }
-
-</script>
-
-<body>
+    function CopyToClipboard(id)
+        {
+        var r = document.createRange();
+        r.selectNode(document.getElementById(id));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        window.alert("Skopiowano hasło");
+        }
+    
+    </script>
+{% extends "base.html" %}
+{% block content %}
+<div class="wrapper">
+<div class="center">
     <br>
     <br>
     <h1 id="haslo" style="text-align:center">{{genhaslo}}</h1>
-    <button onclick="CopyToClipboard('haslo')">Kopiuj hasło</button>
-
-</body>
-
-</html>
+    <br>
+    <button class="center2" onclick="CopyToClipboard('haslo')">Kopiuj hasło</button>
+    <br>
+</div>
+</div>
+{%endblock%}

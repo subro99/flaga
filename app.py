@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 import os
 from moje_programy.gen_data import data
 from moje_programy.haslo import generator_hasla
@@ -10,13 +10,16 @@ from moje_programy.quiz_questions import english
 from moje_programy.quiz import quiz_generator
 from moje_programy.session_data import session_storage
 import datetime
-import pytz
 
+import flask_wtf
+from flask_wtf import FlaskForm
+from wtforms import StringField, SelectField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+import wtforms.validators
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
 # app.config.from_object("config.DevelopmentConfig")
-app.config.from_object("config.Config")
-print(app.config)
+# app.config.from_object("config.Config")
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
     if request.method == "GET":
@@ -72,7 +75,7 @@ def quiz():
         my_date1 = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
         d_quiz_1, correct_answers = quiz_generator(capitals)
         session["answers"] = correct_answers
-        session["stime"]=str(my_date1) #dlaczego bez str() jest +00:00 na koncu?
+        session["stime"]=str(my_date1) #dlaczego bez str() jest +00:00 na koncu? oto jest pytanie
         # session_storage(d_quiz_1, correct_answers)
         return render_template("quiz.html",d_quiz_1=d_quiz_1)
     if request.method == "POST":
@@ -98,6 +101,59 @@ def quiz():
         #     qq.append(q)
         #     aa.append(a)
         return render_template("quiz_wynik.html",result=result,answers=answers)
+
+
+def save_data(string):
+    
+    if not 'dane' in os.listdir():
+        os.mkdir('dane')
+        if not 'notatnik.txt' in os.listdir('dane'):
+             os.system('touch notatnik.txt')
+            
+    with open('dane/notatnik.txt', "a+") as f:
+        f.write(string)
+
+@app.route('/form_b', methods = ["GET","POST"])
+def form_b():
+    form = music_form()
+    feedback=""
+    # if request.method == 'POST':
+    #     return redirect(url_for('form_result'))
+    if form.validate_on_submit():
+        message=form.mess_box.data
+        music_type=form.music_type.data
+        # session["message"]=message
+        string = '{} - {}\n'.format(music_type, message)
+        save_data(string)
+        return redirect( url_for('form_result',music_type=music_type))
+  
+    return render_template("form_b.html",form=form)
+
+@app.route('/form_result')
+def form_result():
+    # message=session["message"]
+    music_type=request.args["music_type"]
+    return render_template("form_result.html", music_type=music_type)
+
+
+@app.route('/result')
+def res():
+    return render_template("session_result.html",s=session.items())
+
+    
+class music_form(FlaskForm):
+    m_types=[
+        ("Rock", "Rock"),
+        ("POP", "POP"),
+        ("Heavy metal", "Heavy metal"),
+        ("Hip hop", "Hip hop"),
+        ("Disco", "Disco")
+    ]
+
+    mess_box = StringField('Link do muzyki: ', validators=[wtforms.validators.URL(message="Niepoprawny link!")])
+    # mess_box = StringField('Link do muzyki: ', validators=[DataRequired(message="wrong")])
+    music_type= SelectField(label="Typ muzyki", choices=m_types)
+    button = SubmitField('Wyślij')
 
 if __name__=="__main__":
     app.run()
