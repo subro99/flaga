@@ -51,7 +51,6 @@ def xd():
 def flaga_dla_ukrainy():
     return render_template("flaga_ukraina.html")
 
-
 @app.route('/brudnopis')
 def brudnopis():
     hero=bohater("ukasz")
@@ -70,7 +69,6 @@ def int_characters():
         int_characters.append([character,description,len(words)])
     int_characters.sort(reverse=True,key=lambda x:x[2])
     return render_template("ciekawe_postacie.html",int_characters=int_characters)
-
 
 @app.route('/quiz', methods = ["GET","POST"])
 def quiz():
@@ -105,17 +103,6 @@ def quiz():
         #     aa.append(a)
         return render_template("quiz_wynik.html",result=result,answers=answers)
 
-
-def save_data(string):
-    
-    if not 'dane' in os.listdir():
-        os.mkdir('dane')
-        if not 'notatnik.txt' in os.listdir('dane'):
-             os.system('touch notatnik.txt')
-            
-    with open('dane/notatnik.txt', "a+") as f:
-        f.write(string)
-
 @app.route('/form_b', methods = ["GET","POST"])
 def form_b():
     form = music_form()
@@ -129,7 +116,6 @@ def form_b():
         string = '{} - {}\n'.format(music_type, message)
         save_data(string)
         return redirect( url_for('form_result',music_type=music_type))
-  
     return render_template("form_b.html",form=form)
 
 @app.route('/form_result')
@@ -138,12 +124,22 @@ def form_result():
     music_type=request.args["music_type"]
     return render_template("form_result.html", music_type=music_type)
 
-
 @app.route('/result')
 def res():
     return render_template("session_result.html",s=session.items())
 
     
+def save_data(string):
+    
+    if not 'dane' in os.listdir():
+        os.mkdir('dane')
+        if not 'notatnik.txt' in os.listdir('dane'):
+             os.system('touch notatnik.txt')
+            
+    with open('dane/notatnik.txt', "a+") as f:
+        f.write(string)
+
+
 class music_form(FlaskForm):
     m_types=[
         ("Rock", "Rock"),
