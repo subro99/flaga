@@ -1,49 +1,19 @@
 
 {% extends "base.html" %}
 {% block content %}
-<body>
-  <div class="center">
+<div class="center_text">
+  <div class="center2">
 
     <h1>Lista ciekawych postaci</h1>
 
 </div>
   {%for character,description,counter in int_characters:%}
-  <h2 style="margin-left:10%;margin-bottom: 0.1em;">{{character}}</h2>
+  <h2 style="margin-bottom: 0.1em;">{{character}}</h2>
   <div id="uk_headline">{{description}}</div>
-  <h2 style="margin-left:10%;margin-bottom: 0.1em;">{{counter}}</h2>
+  <h2 style="margin-bottom: 0.1em;">{{counter}}</h2>
   <br>
   {%endfor%}
-</body>
+</div>
 
 {%endblock%}
 
-<!-- 
-<!DOCTYPE>
-<html>
-<head>
-</head>
-<style>
-  #uk_headline {
-    font-size: 16px;
-    color: black;
-    margin-right:10%;
-    margin-left:10%;
-    /*margin-top: 200px;
-    font-size: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Steelfish Rg', 'helvetica neue',
-             helvetica, arial, sans-serif;
-    font-weight: 800; */
-  }
-
-</style>
-<body>
-{%for character,description,counter in int_characters:%}
-<h2 style="margin-left:10%;margin-bottom: 0.1em;">{{character}}</h2>
-<div id="uk_headline">{{description}}</div>
-<h2 style="margin-left:10%;margin-bottom: 0.1em;">{{counter}}</h2>
-<br>
-{%endfor%}
-</body>
-</html> -->

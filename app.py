@@ -1,25 +1,28 @@
-from flask import Flask, render_template, request, session, redirect, url_for
 import os
+import random
+import datetime
+import flask_wtf
+import wtforms.validators
+
+from flask import Flask, render_template, request, session, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, SelectField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+
 from moje_programy.gen_data import data
 from moje_programy.haslo import generator_hasla
 from moje_programy.bohaterowie import bohater
-import random
 from moje_programy.postac_wiki import description_wiki
 from moje_programy.quiz_questions import capitals
 from moje_programy.quiz_questions import english
 from moje_programy.quiz import quiz_generator
 from moje_programy.session_data import session_storage
-import datetime
 
-import flask_wtf
-from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
-import wtforms.validators
 app=Flask(__name__)
 app.secret_key = "lodoherbataultrasecretkey"
-# app.config.from_object("config.DevelopmentConfig")
+app.config.from_object("config.DevelopmentConfig")
 # app.config.from_object("config.Config")
+
 @app.route('/gen_haslo', methods = ["GET","POST"])
 def genhaslo():
     if request.method == "GET":
