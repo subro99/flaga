@@ -1,3 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+
+    .hero-quote{
+    font-family: Georgia, "Times new roman", Times;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+    border-left: 5px solid #ddd;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+</style>
+
+<div class="center_text">
 <div class="flaga" style="text-align:center">
     <img src="{{ flaga }}" align="middle">
 </div>
@@ -21,24 +39,27 @@
     </div>
     -->
 
-
-    <div class="hero" style="text-align:center">
+    <div class="center_cream" style="text-align:center">
         <h1>{{ hero.name }}</h1>
     </div>
 
-    <br>
 
-    <div class="hero-quote" style="text-align:center">
+
+    <div class="hero-quote">
         <p>"{{hero.quote}}"</p>
     </div>
 
-    <br>
 
-    <div class="hero-info" style="text-align:center">
+
+    <div class="hero-info">
         <p>{{ hero.description | safe }}</p>
-        <p>{{ hero.url | safe }}</p>
+        <p style="text-align:center">{{ hero.url | safe }}</p>
+        <br>
         <br>
         <br>
     </div>
 
+
 {% endfor %}
+</div>
+{%endblock%}

@@ -180,6 +180,9 @@ def gather_heroes():
  		'Rotmistrz Pilecki',
  		'Maria Skłodowska',
  		'Fryderyk Chopin',
+ 		'Stefan Banach',
+		'Bohdan Paczyński',
+		 
 	]
 
 	greetings = [
@@ -199,11 +202,12 @@ def gather_heroes():
 
 			# Get some info and link.
 			some_info = wikipedia.page(hero)
+			print(some_info.url)
 			info_intro = some_info.content.split('\n\n')[0]
 			url = '<a href="'+some_info.url+'">Poszukaj więcej info o: '+hero+"</a>"
 			
 			# Get what hero thinks.
-			hero_think(hero)
+			hero_think(hero,some_info.url)
 			
 			# Get & save images.
 			# images = some_info.images
@@ -277,7 +281,7 @@ def bold(hero_info):
 	]
 
 	right_desc = []
-	words = [w.lower() for w in hero_info.split()]
+	words = [w for w in hero_info.split()]
 	for w in words:
 		for woah in nice:
 			if w.startswith(woah):
@@ -286,8 +290,10 @@ def bold(hero_info):
 	right_desc = " ".join(right_desc)
 	return right_desc
 
-def hero_think(name):
-	url_name = name.replace(' ', '_')
+def hero_think(name,hero_url):
+	# url_name = name.replace(' ', '_')
+	url_name = hero_url.split("/")[-1]
+
 	url = 'https://pl.wikiquote.org/wiki/{}'.format(url_name)
 	hero_wikiquotes = requests.get(url)
 	with open('hero_think/'+name+".hero", "w+") as f:
